@@ -26,5 +26,8 @@ public class peMain {
 
         System.out.println("PE007 test:     " + pe007.test());
         System.out.println("PE007 solution: " + pe007.solution());
+
+        System.out.println("PE008 test:     " + pe008.test());
+        System.out.println("PE008 solution: " + pe008.solution());
     }
 }
