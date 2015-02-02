@@ -2,27 +2,29 @@ package com.projectEuler;
 
 import org.junit.runners.model.InitializationError;
 
+import java.util.ArrayList;
+
 /**
  * Created by michael on 1/31/15.
  */
 public class peMain {
-    static final int PE_SOLUTIONS = 12;
 
     public static void main(String[] args) throws InitializationError {
 
-        peSolution[] peSolutions = new peSolution[PE_SOLUTIONS];
-        peSolutions[0] = new pe001();
-        peSolutions[1] = new pe002();
-        peSolutions[2] = new pe003();
-        peSolutions[3] = new pe004();
-        peSolutions[4] = new pe005();
-        peSolutions[5] = new pe006();
-        peSolutions[6] = new pe007();
-        peSolutions[7] = new pe008();
-        peSolutions[8] = new pe009();
-        peSolutions[9] = new pe010();
-        peSolutions[10] = new pe011();
-        peSolutions[11] = new pe012();
+        ArrayList<peSolution> peSolutions = new ArrayList<peSolution>();
+        peSolutions.add(new pe001());
+        peSolutions.add(new pe002());
+        peSolutions.add(new pe003());
+        peSolutions.add(new pe004());
+        peSolutions.add(new pe005());
+        peSolutions.add(new pe006());
+        peSolutions.add(new pe007());
+        peSolutions.add(new pe008());
+        peSolutions.add(new pe009());
+        peSolutions.add(new pe010());
+        peSolutions.add(new pe011());
+        peSolutions.add(new pe012());
+        peSolutions.add(new pe013());
 
         for (peSolution pes : peSolutions) {
             System.out.println(pes.test());
