@@ -6,7 +6,7 @@ import org.junit.runners.model.InitializationError;
  * Created by michael on 1/31/15.
  */
 public class peMain {
-    static final int PE_SOLUTIONS = 11;
+    static final int PE_SOLUTIONS = 12;
 
     public static void main(String[] args) throws InitializationError {
 
@@ -22,6 +22,7 @@ public class peMain {
         peSolutions[8] = new pe009();
         peSolutions[9] = new pe010();
         peSolutions[10] = new pe011();
+        peSolutions[11] = new pe012();
 
         for (peSolution pes : peSolutions) {
             System.out.println(pes.test());

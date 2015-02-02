@@ -2,8 +2,6 @@ package com.projectEuler;
 
 import org.junit.runners.model.InitializationError;
 
-import java.util.Date;
-
 /**
  * Created by michael on 2/1/15.
  */
@@ -13,10 +11,9 @@ public abstract class peSolution {
     private long startTime = 0;
     private long endTime = 0;
     private long elapsedTime = 0;
-    private static Date dateObj = new Date();
 
-    public static final String TEST_RESULT_FORMAT = "%s test result:     %15s  run time is: %4sm";
-    public static final String SOLUTION_RESULT_FORMAT = "%s solution result: %15s  run time is: %4sm";
+    public static final String TEST_RESULT_FORMAT = "%s test result:     %15s  run time is: %4sms";
+    public static final String SOLUTION_RESULT_FORMAT = "%s solution result: %15s  run time is: %4sms";
 
     protected final String baseData;
     protected final String testData;
@@ -63,21 +60,21 @@ public abstract class peSolution {
     }
 
     protected void startTimer() {
-        startTime = dateObj.getTime();
+        startTime = System.nanoTime();
         elapsedTime = startTime;
     }
 
     protected void stopTimer() {
-        endTime = dateObj.getTime();
+        endTime = System.nanoTime();
     }
 
-    protected long getRunTime() {
-        return endTime - startTime;
+    public double getRunTime() {
+        return (endTime - startTime) / 1e6;
     }
 
-    protected long getElapsedTime() {
+    public long getElapsedTime() {
         long elapsedOld = elapsedTime;
-        elapsedTime = dateObj.getTime();
+        elapsedTime = System.nanoTime();
         return elapsedTime - elapsedOld;
     }
 
@@ -88,7 +85,7 @@ public abstract class peSolution {
     }
 
     protected String getResult(String format, String result) {
-        return String.format(format, name, result, Long.toString(getRunTime()));
+        return String.format(format, name, result, Double.toString(getRunTime()));
     }
 
     public String getName() {
@@ -97,5 +94,13 @@ public abstract class peSolution {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public long getEndTime() {
+        return endTime;
     }
 }

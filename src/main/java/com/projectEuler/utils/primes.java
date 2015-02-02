@@ -66,6 +66,10 @@ public class primes {
         return 0;
     }
 
+    public static ArrayList<Integer> getArrayOfPrimes() {
+        return getArrayOfPrimes(maxPrime);
+    }
+
     public static ArrayList<Integer> getArrayOfPrimes(int primesLessThanN) {
         ArrayList<Integer> primeArray = new ArrayList<Integer>();
 
