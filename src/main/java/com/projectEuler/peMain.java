@@ -25,6 +25,7 @@ public class peMain {
         peSolutions.add(new pe011());
         peSolutions.add(new pe012());
         peSolutions.add(new pe013());
+        peSolutions.add(new pe014());
 
         for (peSolution pes : peSolutions) {
             System.out.println(pes.test());
