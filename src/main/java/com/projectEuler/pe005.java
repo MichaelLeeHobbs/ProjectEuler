@@ -3,7 +3,12 @@ package com.projectEuler;
 /**
  * Created by michael on 1/31/15.
  */
-public class pe005 {
+public class pe005 extends peSolution {
+
+    // set base data and test data
+    public pe005() {
+        super("PE005", "N/A", "N/A");
+    }
 
     // Smallest multiple
     // 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
@@ -17,8 +22,14 @@ public class pe005 {
     // 6=2^1*3^1
     // and so on...
     // thus 2^4 * 3^2 * 5 * 7 * 11 * 13 * 17 * 19
-    public static String solution(){
+    public String solution(String data, String format) {
+        startTimer();
+        setData(data);
+
         int result = 2*2*2*2*3*3*5*7*11*13*17*19;
-        return Integer.toString(result);
+
+        stopTimer();
+
+        return getResult(format, Integer.toString(result));
     }
 }

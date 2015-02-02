@@ -1,9 +1,17 @@
 package com.projectEuler;
 
+import org.junit.runners.model.InitializationError;
+
 /**
  * Created by michael on 1/31/15.
  */
-public class pe006 {
+public class pe006 extends peSolution {
+
+    // set base data and test data
+    public pe006() {
+        super("PE006", "100", "10");
+    }
+
 
     // Sum square difference
     // The sum of the squares of the first ten natural numbers is,
@@ -15,16 +23,16 @@ public class pe006 {
 
     // there is a sequence thus we can find a closed form 1/12(3n+2)(n^3-3)
 
-    public static String test(){
-        return solution(10);
-    }
+    public String solution(String data, String format) throws InitializationError {
+        startTimer();
+        setData(data);
 
-    public static String solution() {
-        return solution(100);
-    }
+        int n = getArgInt(1);
 
-    public static String solution(int n){
         int result = ((3*n+2)*(n*n*n-n))/12;
-        return Integer.toString(result);
+
+        stopTimer();
+
+        return getResult(format, Integer.toString(result));
     }
 }

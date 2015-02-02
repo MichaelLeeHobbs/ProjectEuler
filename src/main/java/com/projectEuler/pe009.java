@@ -1,9 +1,11 @@
 package com.projectEuler;
 
+import org.junit.runners.model.InitializationError;
+
 /**
  * Created by michael on 2/1/15.
  */
-public class pe009 {
+public class pe009 extends peSolution {
 
     /*
     Special Pythagorean triplet
@@ -17,20 +19,20 @@ public class pe009 {
     Find the product abc.
      */
 
-
-    public static String test() {
-        return solution(12);
+    // set base data and test data
+    public pe009() {
+        super("PE009", "1000", "12");
     }
 
-    public static String solution() {
-        return solution(1000);
-    }
+    public String solution(String data, String format) throws InitializationError {
+        startTimer();
+        setData(data);
 
-    public static String solution(int target) {
         int a = 0;
         int b = 0;
         int c = 0;
         int result = 0;
+        int target = getArgInt(1);
 
         for (c = 3; result != target; c++) {
 
@@ -49,6 +51,9 @@ public class pe009 {
                 break;
         }
 
-        return Integer.toString(a * b * c);
+        result = a * b * c;
+        stopTimer();
+
+        return getResult(format, Integer.toString(result));
     }
 }

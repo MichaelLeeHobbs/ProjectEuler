@@ -1,5 +1,7 @@
 package com.projectEuler;
 
+import org.junit.runners.model.InitializationError;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -7,7 +9,7 @@ import java.nio.file.Paths;
 /**
  * Created by michael on 2/1/15.
  */
-public class pe008 {
+public class pe008 extends peSolution {
     /*
     Largest product in a series
     Problem 8
@@ -36,11 +38,16 @@ public class pe008 {
     Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
      */
 
+    // set base data and test data
+    public pe008() {
+        super("PE008", "13,problem008.txt", "4,problem008.txt");
+    }
+
     private static int[] readFileToIntArray(String filename) throws IOException {
 
         String content;
         int[] intArray;
-        content = new String(Files.readAllBytes(Paths.get("resources/" + filename)));
+        content = new String(Files.readAllBytes(Paths.get("src/main/resources/" + filename)));
         content = content.replace("\n", "");
         intArray = new int[content.length()];
         for (int i = 0; i < content.length(); i++) {
@@ -50,21 +57,20 @@ public class pe008 {
 
     }
 
-    public static String solution() {
-        return solution(13);
-    }
 
-    public static String test() {
-        return solution(4);
-    }
-
-    public static String solution(int n) {
+    public String solution(String data, String format) throws InitializationError {
+        setData(data);
 
         int[] testArray;
         long result = 0;
+        int n = getArgInt(1);
+        String fileName = getArgString(2);
 
         try {
-            testArray = readFileToIntArray("problem008.txt");
+            testArray = readFileToIntArray(fileName);
+
+            // *** TIMER START ***
+            startTimer();
 
 
             for (int m = 0; n <= testArray.length; m++, n++) {
@@ -80,12 +86,14 @@ public class pe008 {
 
             }
 
+            // *** TIMER STOP
+            stopTimer();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
-        return Long.toString(result);
+        return getResult(format, Long.toString(result));
     }
 
 }

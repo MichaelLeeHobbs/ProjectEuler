@@ -10,14 +10,14 @@ import java.util.List;
  */
 public class primes {
 
-    private static int maxPrime = 150001;
+    private static int maxPrime = 10000000;
     private static boolean[] primes = new boolean[maxPrime + 1];
     static {
         Arrays.fill(primes, Boolean.TRUE);
         primes[0] = false;
         primes[1] = false;
 
-        int stop = primes.length / 2;
+        int stop = (int) Math.sqrt(primes.length);
         for (int i = 2; i < stop; i++){
             if (primes[i]){
                 for (int k = i * i; k < primes.length && k > 0; k += i){
@@ -64,5 +64,23 @@ public class primes {
         }
 
         return 0;
+    }
+
+    public static ArrayList<Integer> getArrayOfPrimes(int primesLessThanN) {
+        ArrayList<Integer> primeArray = new ArrayList<Integer>();
+
+        for (int i = 0; i < primes.length && i < primesLessThanN; i++) {
+            if (primes[i]) {
+                primeArray.add(i);
+            }
+        }
+        return primeArray;
+    }
+
+    public static boolean isPrime(int num) {
+        if (num % 2 == 0 && num != 2) return false;
+        for (int i = 3; i * i <= num; i += 2)
+            if (num % i == 0) return false;
+        return true;
     }
 }
