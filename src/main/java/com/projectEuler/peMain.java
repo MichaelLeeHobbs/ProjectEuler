@@ -1,5 +1,6 @@
 package com.projectEuler;
 
+import com.projectEuler.utils.MiscMath;
 import org.junit.runners.model.InitializationError;
 
 import java.util.ArrayList;
@@ -10,6 +11,8 @@ import java.util.ArrayList;
 public class peMain {
 
     public static void main(String[] args) throws InitializationError {
+
+        String test = MiscMath.numberToBritishString(173l);
 
         ArrayList<peSolution> peSolutions = new ArrayList<peSolution>();
         peSolutions.add(new pe001());
@@ -28,6 +31,7 @@ public class peMain {
         peSolutions.add(new pe014());
         peSolutions.add(new pe015());
         peSolutions.add(new pe016());
+        peSolutions.add(new PE017());
 
         for (peSolution pes : peSolutions) {
             System.out.println(pes.test());
@@ -36,3 +40,4 @@ public class peMain {
 
     }
 }
+
