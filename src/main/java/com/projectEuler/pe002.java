@@ -4,7 +4,7 @@ import org.junit.runners.model.InitializationError;
 
 import java.util.LinkedList;
 
-import static com.projectEuler.utils.fibonacci.getNthTerm;
+import static com.projectEuler.utils.Fibonacci.getNthTerm;
 
 /**
  * Created by michael on 1/31/15.

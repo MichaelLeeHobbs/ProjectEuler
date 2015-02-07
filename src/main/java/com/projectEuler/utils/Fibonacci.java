@@ -9,7 +9,7 @@ import java.util.Map;
  * This is result in greater memory usage but significantly faster run time
  * Tag: recursion, memoization
  */
-public class fibonacci {
+public class Fibonacci {
     private static Map fibSequence = new HashMap();
     static {
         fibSequence.put(1, 1);

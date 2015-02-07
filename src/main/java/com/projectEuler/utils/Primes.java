@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by michael on 1/31/15.
  */
-public class primes {
+public class Primes {
 
     private static int maxPrime = 10000000;
     private static boolean[] primes = new boolean[maxPrime + 1];

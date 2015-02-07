@@ -3,7 +3,7 @@ package com.projectEuler.utils;
 /**
  * Created by michael on 1/31/15.
  */
-public class strings {
+public class Strings {
     public static boolean isPalindrome(String candidate){
         StringBuilder reversed = new StringBuilder();
         for (int i = candidate.length() - 1; i >= 0; i--) {

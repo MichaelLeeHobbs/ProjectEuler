@@ -1,5 +1,7 @@
 package com.projectEuler;
 
+import com.projectEuler.utils.Strings;
+
 /**
  * Created by michael on 1/31/15.
  */
@@ -21,7 +23,7 @@ public class pe004 extends peSolution {
         int mn = 0;
         for (int m = 999, n = 999; ; n--){
             mn = m * n;
-            if (com.projectEuler.utils.strings.isPalindrome(Integer.toString(mn))) {
+            if (Strings.isPalindrome(Integer.toString(mn))) {
                 result = Integer.toString(mn);
                 break;
             }

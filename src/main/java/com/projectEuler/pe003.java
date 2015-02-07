@@ -1,6 +1,6 @@
 package com.projectEuler;
 
-import com.projectEuler.utils.primes;
+import com.projectEuler.utils.Primes;
 import org.junit.runners.model.InitializationError;
 
 import java.util.List;
@@ -24,7 +24,7 @@ public class pe003 extends peSolution {
 
         long n = getArgLong(1);
 
-        List<Integer> factors = primes.factor(n);
+        List<Integer> factors = Primes.factor(n);
         long result = factors.get(factors.size() - 1);
 
         stopTimer();

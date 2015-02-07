@@ -5,7 +5,7 @@ package com.projectEuler.utils;
  * Created by Michael Hobbs on 2/7/15.
  * email: Michael.Lee.Hobbs@gmail.com
  */
-public class combinatorics {
+public class Combinatorics {
 
     /*
      * Formula for Combination: n! / (r! * (n - r)!)

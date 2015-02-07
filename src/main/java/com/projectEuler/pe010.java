@@ -1,6 +1,6 @@
 package com.projectEuler;
 
-import com.projectEuler.utils.primes;
+import com.projectEuler.utils.Primes;
 import org.junit.runners.model.InitializationError;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class pe010 extends peSolution {
         int n = getArgInt(1);
         long result = 0;
 
-        ArrayList<Integer> primesList = primes.getArrayOfPrimes(n);
+        ArrayList<Integer> primesList = Primes.getArrayOfPrimes(n);
 
         for (int p : primesList) {
             result += p;

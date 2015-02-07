@@ -1,6 +1,6 @@
 package com.projectEuler;
 
-import com.projectEuler.utils.primes;
+import com.projectEuler.utils.Primes;
 import org.junit.runners.model.InitializationError;
 
 /**
@@ -19,7 +19,7 @@ public class pe007 extends peSolution {
         setData(data);
 
         int n = getArgInt(1);
-        int result = primes.getNthPrime(n);
+        int result = Primes.getNthPrime(n);
 
         stopTimer();
 
